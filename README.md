@@ -2,4 +2,4 @@
 
 this is my contribution to the advent of code of 2018!
 
-You or free to reutilize every part of this project.
+You are free to reutilize every parts of this project.

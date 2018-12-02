@@ -2,6 +2,8 @@ package Day2
 
 import Utils.inputlines
 
+//count in each lines the number of occurence of each characters and if there is at least one that appears exactly
+// twice : increment sum2. Same for 3 times. Then return return the checksum : sum2*sum3
 fun checksum(lines: List<String>): Int{
     var sum2 = 0
     var sum3 = 0
@@ -17,6 +19,8 @@ fun checksum(lines: List<String>): Int{
     return sum2*sum3
 }
 
+//compare the two strings character by characters and count the number of characters that differs. Return the number of
+// difference
 fun countDifferences(l1: String, l2: String): Int{
     var sum = 0
     for (i in 0..(l1.length-1)){
@@ -26,6 +30,8 @@ fun countDifferences(l1: String, l2: String): Int{
     return sum
 }
 
+//once the two strings that have only one difference are found, search the difference by comparing characters and then
+// return the string with this character removed
 fun similarPart(l1: String, l2: String): String{
     var id = 0
     for (i in 0..(l1.length-1)){
@@ -38,6 +44,8 @@ fun similarPart(l1: String, l2: String): String{
     return l1.removeRange(id, id+1);
 }
 
+//The two strings wanted have exectly one difference. By counting the number of differences between every lines,
+// when the number is exactly 1 extract the similar part end then return it
 fun findSimilar(lines: List<String>): String{
     var similar = ""
     loop@ for(l1 in lines){
@@ -54,6 +62,8 @@ fun findSimilar(lines: List<String>): String{
 
 fun main(args: Array<String>) {
     val lines = inputlines(2)
+    //print the checksum
     println(checksum(lines))
+    //print the wanted similar part
     println(findSimilar(lines))
 }
